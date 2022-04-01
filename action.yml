@@ -14,7 +14,9 @@ inputs:
 outputs:
   output:
     description: "pipenv-setup output"
-
+branding:
+  color: "black"
+  icon: "check-circle"
 runs:
   using: "docker"
   image: "Dockerfile"
