@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/bash
 
 export SETUPTOOLS_USE_DISTUTILS=stdlib
 echo "fail on error: ${INPUT_FAIL_ON_ERROR}"
