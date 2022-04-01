@@ -12,8 +12,8 @@ inputs:
     required: false
     default: "true"
 outputs:
-  is_formatted:
-    description: "Whether the files were formatted using the black formatter."
+  output:
+    description: "pipenv-setup output"
 
 runs:
   using: "docker"

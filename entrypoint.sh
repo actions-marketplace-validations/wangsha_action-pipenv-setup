@@ -1,6 +1,14 @@
 #!/bin/sh -l
 
 export SETUPTOOLS_USE_DISTUTILS=stdlib
-pipenv-setup ${INPUT_BLACK_ARGS}
-time=$(date)
-echo "::set-output name=time::$time"
+
+echo "[action-pipenv-setup] pipenv-setup ${INPUT_BLACK_ARGS}"
+exit_val="0"
+output = "$(pipenv-setup ${INPUT_BLACK_ARGS})" || exit_val="$?"
+
+echo "::set-output name=output::$output"
+
+# Throw error if an error occurred and fail_on_error is true
+if [[ "${INPUT_FAIL_ON_ERROR,,}" = 'true' && "${exit_val}" -eq "1" ]]; then
+  exit 1
+fi
