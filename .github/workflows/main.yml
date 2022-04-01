@@ -1,0 +1,18 @@
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Test pipenv-setup
+    steps:
+      - name: Test pipenv-setup
+        uses: wangsha/action-pipenv-setup@main

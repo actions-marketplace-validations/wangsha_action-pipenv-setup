@@ -1,9 +1,0 @@
-on: [push]
-
-jobs:
-  hello_world_job:
-    runs-on: ubuntu-latest
-    name: Test pipenv-setup
-    steps:
-      - name: Test pipenv-setup
-        uses: wangsha/action-pipenv-setup@main
