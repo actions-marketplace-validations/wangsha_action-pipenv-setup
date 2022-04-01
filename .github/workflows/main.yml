@@ -16,5 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Test pipenv-setup
     steps:
+      - uses: actions/checkout@v3
       - name: Test pipenv-setup
         uses: ./
