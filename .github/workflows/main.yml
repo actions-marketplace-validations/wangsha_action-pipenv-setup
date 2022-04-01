@@ -12,9 +12,9 @@ on:
         required: true
         default: 'warning'
 jobs:
-  hello_world_job:
+  pipenv-setup:
     runs-on: ubuntu-latest
     name: Test pipenv-setup
     steps:
       - name: Test pipenv-setup
-        uses: wangsha/action-pipenv-setup@main
+        uses: ./
