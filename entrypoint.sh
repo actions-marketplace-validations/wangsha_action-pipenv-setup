@@ -2,9 +2,9 @@
 
 export SETUPTOOLS_USE_DISTUTILS=stdlib
 
-echo "[action-pipenv-setup] pipenv-setup ${INPUT_BLACK_ARGS}"
+echo "[action-pipenv-setup] pipenv-setup ${INPUT_ARGS}"
 exit_val="0"
-output = "$(pipenv-setup ${INPUT_BLACK_ARGS})" || exit_val="$?"
+output = "$(pipenv-setup ${INPUT_ARGS} 2>&1)" || exit_val="$?"
 
 echo "::set-output name=output::$output"
 
